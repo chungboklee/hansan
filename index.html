@@ -9,7 +9,6 @@
     <title>Hansan</title>
 
     <link rel="canonical" href="https://www.hansan.cf">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 </head>
@@ -23,8 +22,8 @@
       <p class="mb-0">* Support: hansan@email.com</p>
       <p class="mb-0">System information as of <span id="dayname"></span> <span id="monthname"></span> <span id="daynum"></span> <span id="time"></span> <script>document.write(new Date().getFullYear())</script></p>
     </div>
-    <p class="command my-4">guest@hansan-4vcpu-32gb-intel-sgp1:~#<span class="typed-text"></span>
-    <span class="input-cursor">&nbsp;</span></p>
+    <p class="command my-4">guest@hansan:~#
+      <span class="auto-type ml-4"></span><span class="input-cursor"></span></p>
     <p class="footer">Copyright (c) <script>document.write(new Date().getFullYear())</script>. Hansan & Company. All rights reserved.
     </p>
   </div>
@@ -54,8 +53,19 @@
     let time = h + ":" + m + ":" + s;
     document.getElementById("time").innerHTML = time;
 
+    </script>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+      var typed = new Typed(".auto-type",{
+        strings: ["sudo apt-get install southkoreannetwork","sudo apt-get install wallforme","sudo apt-get install wearbe","sudo apt-get update"],
+        typeSpeed: 50,
+        backSpeed: 100,
+        backDelay: 200,
+        loop: true,
+        showCursor: false
+      })
     </script>
 
 </body>
