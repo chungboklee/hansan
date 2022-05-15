@@ -9,6 +9,7 @@
     <title>Hansan</title>
 
     <link rel="canonical" href="https://www.hansan.cf">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 </head>
@@ -16,13 +17,46 @@
   
 <body>  
   <div class="container">
-    <p class="command">root@ubuntu-s-4vcpu-32gb-intel-sgp1-01:~#<span class="typed-text"></span>
+    <div class="my-4">
+      <p class="mb-0">Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-109-generic x86_64)</p>
+      <p class="mb-0">* Documentation:  https://www.hansan.cf</p>
+      <p class="mb-0">* Support: hansan@email.com</p>
+      <p class="mb-0">System information as of <span id="dayname"></span> <span id="monthname"></span> <span id="daynum"></span> <span id="time"></span> <script>document.write(new Date().getFullYear())</script></p>
+    </div>
+    <p class="command my-4">guest@hansan-4vcpu-32gb-intel-sgp1:~#<span class="typed-text"></span>
     <span class="input-cursor">&nbsp;</span></p>
     <p class="footer">Copyright (c) <script>document.write(new Date().getFullYear())</script>. Hansan & Company. All rights reserved.
     </p>
   </div>
 
   <script src="typings.js"></script>
+  
+  <script>
+  function addZero(i) {
+    if (i < 10) {i = "0" + i}
+    return i;
+  }
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+    
+    const d = new Date();
+    let day = weekday[d.getDay()];
+    let name = month[d.getMonth()];
+    let date = d.getDate()
+    document.getElementById("dayname").innerHTML = day;
+    document.getElementById("monthname").innerHTML = name;
+    document.getElementById("daynum").innerHTML = date;
+    
+    let h = addZero(d.getHours());
+    let m = addZero(d.getMinutes());
+    let s = addZero(d.getSeconds());
+    let time = h + ":" + m + ":" + s;
+    document.getElementById("time").innerHTML = time;
+
+
+    
+    </script>
 
 </body>
 
